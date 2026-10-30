@@ -48,7 +48,8 @@
 .today .pulse,.today .pulse::after{background:#16A34A}
 .today.closed .pulse,.today.closed .pulse::after{background:var(--red)}
 .td-go{background:var(--green)}
-.prod img{filter:drop-shadow(0 26px 28px rgba(10,25,90,.5))}
+/* no drop-shadow here: the espresso and stand cutouts have straight cropped edges, so a blurred shadow showed up as a blue box */
+.prod img{filter:none}
 .prod::after{background:radial-gradient(closest-side,rgba(10,25,90,.5),rgba(10,25,90,0))}
 .prod[data-pos="0"] .bob{animation-name:bob2}
 @keyframes bob2{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(2deg)}}

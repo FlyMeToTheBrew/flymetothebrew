@@ -299,7 +299,7 @@ const SLIDE_MS = 1500;   // the hero slider changes every 1.5 seconds
   // ---------- 4. a plane that flies as you scroll and lands at "Find us" ----------
   const fl = document.getElementById('flight'), flPlane = document.getElementById('fl-plane'), flPin = document.getElementById('fl-pin'), flRect = document.getElementById('fl-rect');
   const findUs = document.getElementById('find-us');
-  let stops = [];                                  // the Hours / Menu / Drinks stops, filled in below
+  let stops = [];                                  // the Hours / Menu stops, filled in below
   let narrow = innerWidth <= 560;
   const waveY = x => (narrow ? 19 : 23) + (narrow ? 4 : 6) * Math.sin(x / 70);
   let fx0 = 22, fx1 = 300, flRaf = 0;
@@ -329,29 +329,10 @@ const SLIDE_MS = 1500;   // the hero slider changes every 1.5 seconds
   addEventListener('load', () => { buildFlight(); flyNow(); });
   buildFlight(); flyNow();
 
-  // ---------- 5. split screen: the cup on the left follows the drink you are reading ----------
-  const split = document.getElementById('split');
-  if (split){
-    const ways = [...split.querySelectorAll('.way')], cups = [...split.querySelectorAll('.cup')], sdots = [...split.querySelectorAll('.cup-dots button')];
-    const lab = split.querySelector('.cup-label'), lw = document.getElementById('cl-w'), lm = document.getElementById('cl-m'), lp = document.getElementById('cl-p');
-    let on = 0;
-    const show = i => {
-      if (i === on) return; on = i;
-      ways.forEach((w, k) => w.classList.toggle('on', k === i));
-      cups.forEach((c, k) => c.classList.toggle('on', k === i));
-      sdots.forEach((b, k) => b.setAttribute('aria-current', k === i));
-      const d = ways[i].dataset; lw.textContent = d.name; lm.textContent = d.tag; lp.textContent = d.price;
-      lab.classList.remove('swap'); void lab.offsetWidth; lab.classList.add('swap');
-    };
-    const splitIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) show(+e.target.dataset.i); }), {rootMargin:'-52% 0px -48% 0px'});
-    ways.forEach(w => splitIO.observe(w));
-    sdots.forEach((b, i) => b.addEventListener('click', () => ways[i].scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'})));
-  }
-
-  // ---------- 6. fly-through: layers drift at different speeds, cloud banks slide past, plane stops light up ----------
+  // ---------- 5. fly-through: layers drift at different speeds, cloud banks slide past, plane stops light up ----------
   const parEls = [...document.querySelectorAll('[data-par]')], scrEls = [...document.querySelectorAll('[data-scroll]')], bands = [...document.querySelectorAll('.cloudband')];
   const stopsEl = document.getElementById('fl-stops');
-  stops = [['departures', 'Hours'], ['menu', 'Menu'], ['hot-or-cold', 'Drinks']].map(([id, label]) => {
+  stops = [['departures', 'Hours'], ['menu', 'Menu']].map(([id, label]) => {
     const a = document.createElement('a'); a.className = 'fl-stop'; a.href = '#' + id; a.tabIndex = -1; a.innerHTML = '<span>' + label + '</span>';
     stopsEl.appendChild(a); return {a, el: document.getElementById(id)};
   });
