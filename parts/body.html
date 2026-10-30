@@ -1,0 +1,378 @@
+<a class="skip" href="#menu">Skip to menu</a>
+
+<!-- scroll-linked plane: flies along a dotted path as you scroll and lands at "Find us" -->
+<div class="flight" id="flight" aria-hidden="true">
+  <svg class="fl-svg" id="fl-svg"><defs><clipPath id="flclip"><rect id="fl-rect" x="0" y="-12" width="0" height="52"/></clipPath></defs><path class="fl-ol" id="fl-ol"/><path class="fl-dots" id="fl-dots"/><path class="fl-done" id="fl-done" clip-path="url(#flclip)"/></svg>
+  <span id="fl-stops"></span>
+  <span class="fl-plane" id="fl-plane"><svg viewBox="-22 -16 44 32"><path d="M-16 0 L16 -5 L20 0 L16 5Z" fill="#191510"/><path d="M-2 0 L-13 -14 L-8 -14 L7 -2Z" fill="#F4B400" stroke="#191510" stroke-width="1.4" stroke-linejoin="round"/><path d="M-2 0 L-13 14 L-8 14 L7 2Z" fill="#F4B400" stroke="#191510" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+  <a class="fl-pin" id="fl-pin" href="#find-us" tabindex="-1"><i></i><span>Find us</span></a>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Fly Me to the Brew, home"><img src="assets/logo.svg" alt="">Fly Me to the Brew</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#departures">Hours</a>
+      <a href="#menu">Menu</a>
+      <a href="#find-us">Visit</a>
+    </nav>
+    <div class="top-right">
+      <a class="ig" href="https://www.instagram.com/flyme2thebrew/" target="_blank" rel="noopener" aria-label="Fly Me to the Brew on Instagram (@flyme2thebrew)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      </a>
+      <a class="order-pill" href="#" data-phone="2021246587" data-phone-link>Call<span class="xs-hide"> to order</span></a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- phone menu (the top nav is hidden on small screens) -->
+<nav class="mnav" id="mnav" aria-label="Menu" hidden>
+  <a href="#departures">Hours</a>
+  <a href="#menu">Menu</a>
+  <a href="#find-us">Visit &amp; hours</a>
+  <a class="mcall" href="#" data-phone="2021246587" data-phone-link>Call to order</a>
+  <a class="mig" href="https://www.instagram.com/flyme2thebrew/" target="_blank" rel="noopener">@flyme2thebrew</a>
+</nav>
+
+<!-- shown instead of tel: on computers, where a tel: link can't place a call -->
+<div class="callbox" id="callbox" role="dialog" aria-modal="true" aria-labelledby="cb-title" hidden>
+  <div class="cb-card">
+    <button class="cb-x" type="button" aria-label="Close" data-close>×</button>
+    <small>Fly Me to the Brew</small>
+    <b id="cb-title">Call to order</b>
+    <a class="cb-num" id="cb-num" href="#" data-phone="2021246587" data-phone-text data-phone-link>Loading…</a>
+    <p id="cb-status">Inside the YMCA lobby</p>
+    <div class="btn-row">
+      <a class="btn" id="cb-call" href="#" data-phone="2021246587" data-phone-link>Call now <span class="arr" aria-hidden="true">→</span></a>
+      <button class="btn ghost" id="cb-copy" type="button">Copy number</button>
+    </div>
+    <span class="cb-hint" id="cb-hint">On a computer? Copy it, or open this page on your phone and tap Call.</span>
+  </div>
+</div>
+
+<main>
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <h1 class="sr-only">Fly Me to the Brew: coffee, chai and matcha inside the YMCA lobby in Orlando</h1>
+
+  <!-- Floating drinks: they change on their own every 1.5 seconds. Click a side one, a dot, swipe, or use arrow keys.
+       Order here = order of the big words below. -->
+  <div class="stage" id="stage" data-scroll=".3">
+    <button class="prod" data-pos="0" type="button" aria-label="Show the house latte" style="--k:1.3"><span class="bob"><img src="assets/cut/latte.png" alt="An iced house latte with a Fly Me to the Brew sticker and a green straw" fetchpriority="high"></span></button>
+    <button class="prod" data-pos="1" type="button" aria-label="Show the matcha latte" style="--k:1.05"><span class="bob"><img src="assets/cut/matcha.png" alt="A matcha latte with a cinnamon swirl on a red saucer, seen from above"></span></button>
+    <button class="prod" data-pos="2" type="button" aria-label="Show hot coffee" style="--k:1.12"><span class="bob"><img src="assets/cut/espresso.png" alt="A hot espresso with golden crema in a white cup"></span></button>
+    <button class="prod" data-pos="-2" type="button" aria-label="Show the stand" style="--k:1.15"><span class="bob"><img src="assets/cut/stand.png" alt="The Fly Me to the Brew coffee stand with espresso machine, cups and syrups"></span></button>
+    <button class="prod" data-pos="-1" type="button" aria-label="Show the lobby" style="--k:1.1"><span class="bob"><img src="assets/cut/crew.png" alt="Two customers holding up Fly Me to the Brew cups in the YMCA lobby"></span></button>
+    <div class="stage-word" aria-hidden="true">
+      <span class="w on" style="--n:10">house latte</span>
+      <span class="w" style="--n:12">matcha latte</span>
+      <span class="w" style="--n:10">hot coffee</span>
+      <span class="w" style="--n:9">the stand</span>
+      <span class="w" style="--n:9">the lobby</span>
+    </div>
+  </div>
+
+  <a class="sticker" href="#find-us" aria-label="Handcrafted coffee inside the YMCA lobby">
+    <svg viewBox="0 0 132 132" aria-hidden="true"><defs><path id="circ" d="M66,66 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0"/></defs><text><textPath href="#circ" textLength="334" lengthAdjust="spacingAndGlyphs">Handcrafted · Hot or iced · Inside the YMCA · </textPath></text></svg>
+    <span class="core" aria-hidden="true"><img src="assets/logo.svg" alt=""></span>
+  </a>
+
+  <div class="hero-foot">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Coffee stand · YMCA lobby · Orlando, Florida</span>
+        <p class="hero-title">Coffee, chai &amp; matcha, <span class="script">hot or cold.</span></p>
+        <p class="lede">Handcrafted drinks to match your mood and the Florida weather, made right inside the <strong>YMCA lobby on Northlake Pkwy</strong>. Grab one before class or after.</p>
+        <div class="btn-row">
+          <a class="btn" href="#" data-phone="2021246587" data-phone-link>Call to order <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn ghost" href="#menu">See the menu</a>
+          <a class="rate-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Fly+Me+to+the+Brew%2C+9055+Northlake+Pkwy%2C+Orlando%2C+FL+32827" target="_blank" rel="noopener"><span class="st" aria-hidden="true">★</span>5.0 on Google</a>
+        </div>
+      </div>
+      <div class="hero-side">
+        <!-- filled in from HOURS: open now / next time we open -->
+        <a class="today" id="open-card" href="#departures">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="td-text"><small>The stand</small><b>Inside the YMCA lobby</b><span>See today's hours</span></span>
+          <span class="td-go" aria-hidden="true">→</span>
+        </a>
+        <div class="slide-count" aria-hidden="true"><span id="slide-name">house latte</span><b class="num" id="cur">01</b><i>/ 05</i></div>
+        <div class="dots" id="dots" role="group" aria-label="Choose a drink"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Espresso</span><span>Cortadito</span><span>Cortado</span><span>Americano</span><span>Latte</span><span>Hot <i>&amp;</i> Iced</span><span>Dirty Chai</span><span>Matcha</span><span>Hot Chocolate</span><span>Caramel Latte</span>
+    <span>Espresso</span><span>Cortadito</span><span>Cortado</span><span>Americano</span><span>Latte</span><span>Hot <i>&amp;</i> Iced</span><span>Dirty Chai</span><span>Matcha</span><span>Hot Chocolate</span><span>Caramel Latte</span>
+  </div>
+</div>
+
+<!-- ===================== OPENING HOURS (departures board) ===================== -->
+<section class="sec hoursec" id="departures">
+  <div class="wrap dep-grid">
+    <div class="dep-copy" data-par=".08">
+      <span class="eyebrow" data-reveal>Opening hours</span>
+      <h2 data-reveal style="--d:.05s">Now <span class="script">boarding.</span></h2>
+      <p data-reveal style="--d:.1s">Six flights a week from the YMCA lobby, closed Sundays. Today's flight is lit up on the board.</p>
+      <div class="btn-row" data-reveal style="--d:.15s">
+        <a class="btn" href="#" data-phone="2021246587" data-phone-link>Call to order <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="#find-us">Get directions</a>
+      </div>
+    </div>
+      <div class="dep-wrap" data-par="-.05" data-reveal style="--d:.1s">
+        <div class="dep" id="dep">
+          <div class="dep-head">
+            <span class="dep-title"><svg viewBox="-22 -16 44 32" aria-hidden="true"><path d="M-16 0 L16 -5 L20 0 L16 5Z" fill="currentColor"/><path d="M-2 0 L-13 -14 L-8 -14 L7 -2Z" fill="currentColor"/><path d="M-2 0 L-13 14 L-8 14 L7 2Z" fill="currentColor"/></svg>Departures</span>
+            <span class="dep-clock" aria-hidden="true">Orlando <span class="dc" id="dep-clock"></span></span>
+          </div>
+          <div class="dep-cols" aria-hidden="true"><span>Day</span><span>Time</span><span>Status</span></div>
+          <div class="dep-rows" id="hours" aria-hidden="true"></div>
+          <ul class="sr-only" id="hours-sr"></ul>
+        </div>
+        <p class="dep-note">Board times are on a 24-hour clock, Orlando time. Today's flight is lit up.</p>
+      </div>
+  </div>
+</section>
+
+<div class="cloudband" aria-hidden="true"><i class="cl cl1"></i><i class="cl cl2"></i></div>
+
+<!-- ===================== MENU ===================== -->
+<section class="menu sec" id="menu">
+  <div class="deco" aria-hidden="true" style="--w:130px;right:2%;bottom:5%;animation-delay:-2s"><img src="assets/cut/latte.png" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="head">
+      <h2 data-reveal>What are you <span class="script">sipping?</span></h2>
+      <p data-reveal style="--d:.1s">Everything is made to order, hot or iced. Prices are what's on the board at the stand.</p>
+    </div>
+
+    <div class="temp-row" data-reveal style="--d:.15s">
+      <div class="tempswitch" id="tempswitch" role="group" aria-label="Show the whole menu hot or iced">
+        <button type="button" data-temp="hot" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8 3c-2 3 2 4 0 7M13 3c-2 3 2 4 0 7M18 3c-2 3 2 4 0 7M4 14h16v1.5a5.5 5.5 0 0 1-5.5 5.5h-5A5.5 5.5 0 0 1 4 15.5z"/></svg> Hot</button>
+        <button type="button" data-temp="iced" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 4l3 2 3-2M9 20l3-2 3 2"/></svg> Iced</button>
+      </div>
+      <span class="temp-hint">Every drink flips. Tap any card, or use the switch.</span>
+    </div>
+
+    <div class="board">
+      <div class="flipcard" data-par=".07" data-reveal>
+        <div class="flip-in">
+<article class="cat face front" aria-label="Hot classics">
+        <span class="temp hot">Hot</span>
+        <div class="cat-top">
+          <h3>Hot classics <span class="script">Espresso &amp; friends</span></h3>
+          <img class="cat-img round" src="assets/web/real-hotchai.jpg" alt="" loading="lazy">
+        </div>
+        <ul class="rows">
+          <li><span class="n">Espresso</span><span class="sz">4 oz</span><span class="fill"></span><span class="p">$3.00</span></li>
+          <li><span class="n">Cortadito</span><span class="sz">4 oz</span><span class="fill"></span><span class="p">$3.50</span></li>
+          <li><span class="n">Cortado</span><span class="sz">8 oz</span><span class="fill"></span><span class="p">$3.75</span></li>
+          <li><span class="n">Americano</span><span class="sz">12 oz</span><span class="fill"></span><span class="p">$3.50</span></li>
+          <li><span class="n">Coffee latte</span><span class="sz">12 oz</span><span class="fill"></span><span class="p">$4.75</span></li>
+          <li><span class="n">Hot chocolate</span><span class="sz">8 oz</span><span class="fill"></span><span class="p">$3.50</span></li>
+        </ul>
+        <button class="flip-btn" type="button" data-flip>See it iced <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 4l3 2 3-2M9 20l3-2 3 2"/></svg></button>
+      </article>
+<article class="cat face back" inert aria-label="Iced coffee">
+        <span class="temp iced">Iced</span>
+        <div class="cat-top">
+          <h3>Iced coffee <span class="script">Cold &amp; creamy</span></h3>
+          <img class="cat-img" src="assets/cut/latte.png" alt="" loading="lazy" style="width:clamp(60px,7vw,90px)">
+        </div>
+        <ul class="rows">
+          <li><span class="n">Americano</span><span class="sz">16 oz</span><span class="fill"></span><span class="p">$4.95</span></li>
+          <li><span class="n">Caramel latte</span><span class="sz">16 oz</span><span class="fill"></span><span class="p">$5.95</span></li>
+          <li><span class="n">French vanilla latte</span><span class="sz">16 oz</span><span class="fill"></span><span class="p">$5.95</span></li>
+          <li><span class="n">Hazelnut latte</span><span class="sz">16 oz</span><span class="fill"></span><span class="p">$5.95</span></li>
+          <li><span class="n">Vanilla latte</span><span class="sz">4 oz</span><span class="fill"></span><span class="p">$5.95</span></li>
+        </ul>
+        <button class="flip-btn" type="button" data-flip>Back to hot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8 3c-2 3 2 4 0 7M13 3c-2 3 2 4 0 7M18 3c-2 3 2 4 0 7M4 14h16v1.5a5.5 5.5 0 0 1-5.5 5.5h-5A5.5 5.5 0 0 1 4 15.5z"/></svg></button>
+      </article>
+        </div>
+      </div>
+      <div class="flipcard" data-par="-.07" data-reveal style="--d:.08s">
+        <div class="flip-in">
+<article class="cat face front" aria-label="Hot tea">
+        <span class="temp hot">Hot</span>
+        <div class="cat-top">
+          <h3>Hot tea <span class="script">Matcha &amp; chai</span></h3>
+          <img class="cat-img" src="assets/cut/matcha.png" alt="" loading="lazy">
+        </div>
+        <ul class="rows">
+          <li><span class="n">Matcha latte</span><span class="sz">12 oz</span><span class="fill"></span><span class="p">$4.95</span></li>
+          <li><span class="n">Dirty matcha latte</span><span class="sz">12 oz</span><span class="fill"></span><span class="p">$5.95</span></li>
+          <li><span class="n">Chai latte</span><span class="sz">12 oz</span><span class="fill"></span><span class="p">$4.95</span></li>
+          <li><span class="n">Dirty chai latte</span><span class="sz">12 oz</span><span class="fill"></span><span class="p">$5.95</span></li>
+        </ul>
+        <button class="flip-btn" type="button" data-flip>See it iced <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 4l3 2 3-2M9 20l3-2 3 2"/></svg></button>
+      </article>
+<article class="cat face back" inert aria-label="Iced tea">
+        <span class="temp iced">Iced</span>
+        <div class="cat-top">
+          <h3>Iced tea <span class="script">Matcha &amp; chai, over ice</span></h3>
+        </div>
+        <ul class="rows">
+          <li><span class="n">Matcha latte</span><span class="sz">16 oz</span><span class="fill"></span><span class="p">$5.95</span></li>
+          <li><span class="n">Dirty matcha latte</span><span class="sz">16 oz</span><span class="fill"></span><span class="p">$6.95</span></li>
+          <li><span class="n">Chai latte</span><span class="sz">16 oz</span><span class="fill"></span><span class="p">$5.95</span></li>
+          <li><span class="n">Dirty chai latte</span><span class="sz">16 oz</span><span class="fill"></span><span class="p">$6.95</span></li>
+        </ul>
+        <p class="tagline">"Dirty" means a shot of espresso in it.</p>
+        <button class="flip-btn" type="button" data-flip>Back to hot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8 3c-2 3 2 4 0 7M13 3c-2 3 2 4 0 7M18 3c-2 3 2 4 0 7M4 14h16v1.5a5.5 5.5 0 0 1-5.5 5.5h-5A5.5 5.5 0 0 1 4 15.5z"/></svg></button>
+      </article>
+        </div>
+      </div>
+      <article class="cat wide flavor-cat" data-reveal>
+        <div class="cat-top">
+          <h3>Pilot upgrades <span class="script">Make it yours</span></h3>
+        </div>
+        <div class="flavors">
+          <span class="flv"><span class="sw">+$0.50</span>Caramel or chocolate drizzle</span>
+          <span class="flv"><span class="sw">+$0.75</span>Alternative milk</span>
+          <span class="flv"><span class="sw">+$0.75</span>Flavor shot</span>
+          <span class="flv"><span class="sw">+$0.50</span>Whipped cream</span>
+          <span class="flv"><span class="sw">+$1.00</span>Extra espresso shot</span>
+        </div>
+        <p class="menu-note">Sugar-free flavor shots are available too, just ask at the stand.</p>
+      </article>
+    </div>
+    <div class="menu-order" data-reveal>
+      <p>Call ahead and we'll have it ready.</p>
+      <a class="btn big" href="#" data-phone="2021246587" data-phone-link>Call to order <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="cloudband" aria-hidden="true"><i class="cl cl1"></i><i class="cl cl2"></i></div>
+
+<!-- ===================== HOT OR COLD ===================== -->
+<section class="giving sec" id="hot-or-cold">
+  <div class="wrap">
+    <div class="give-head" data-par=".08">
+      <span class="eyebrow" data-reveal>Hot or cold</span>
+      <h2 data-reveal style="--d:.05s">Your mood. <span class="script">Your weather.</span></h2>
+      <p data-reveal style="--d:.1s">Every drink on the board comes <strong>hot or cold</strong>, so you can match it to your mood and the Florida weather.</p>
+    </div>
+
+    <p class="ways-title" data-reveal>Whatever you're after</p>
+    <div class="split" id="split">
+      <div class="split-stage">
+        <div class="cup-wrap">
+          <svg class="cup-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48.5"/></svg>
+          <div class="cup-disc">
+        <img class="cup on" src="assets/web/real-hotchai.jpg" alt="An espresso with golden crema" loading="lazy" style="object-position:50% 70%;transform-origin:50% 72%;--s:1.3">
+        <img class="cup" src="assets/web/real-latte.jpg" alt="An iced latte" loading="lazy" style="object-position:55% 66%;transform-origin:55% 68%;--s:1.35">
+        <img class="cup" src="assets/web/real-matcha.jpg" alt="A matcha latte from above" loading="lazy" style="object-position:50% 48%;transform-origin:50% 50%;--s:1.05">
+        <img class="cup" src="assets/web/hot-chocolate.jpg" alt="A hot chocolate with whipped cream" loading="lazy" style="object-position:62% 45%;transform-origin:50% 50%;--s:1">
+          </div>
+        </div>
+        <div class="cup-label" aria-live="off"><span class="cl-t"><b id="cl-w">Espresso</b><small id="cl-m">Hot</small></span><span class="cl-p" id="cl-p">$3.00</span></div>
+        <div class="cup-dots" role="group" aria-label="Choose a drink"><button type="button" data-go="0" aria-label="Show a morning espresso" aria-current="true"></button><button type="button" data-go="1" aria-label="Show a creamy latte"></button><button type="button" data-go="2" aria-label="Show an iced matcha"></button><button type="button" data-go="3" aria-label="Show a hot chocolate"></button></div>
+      </div>
+      <div class="split-list">
+      <article class="way on" data-i="0" data-name="Espresso" data-tag="Hot" data-price="$3.00">
+        <span class="wn">01 <i>/ 04</i></span>
+        <h3>A morning espresso</h3>
+        <p>Espresso is <b>$3.00</b>, a cortadito <b>$3.50</b>, a cortado <b>$3.75</b>. We open at 6 AM Monday and Tuesday.</p>
+        <span class="wtag">Hot</span>
+      </article>
+      <article class="way" data-i="1" data-name="Latte" data-tag="Hot or iced" data-price="$4.75">
+        <span class="wn">02 <i>/ 04</i></span>
+        <h3>A creamy latte</h3>
+        <p>Coffee latte <b>$4.75</b>. Iced caramel, French vanilla or hazelnut for <b>$5.95</b>.</p>
+        <span class="wtag">Hot or iced</span>
+      </article>
+      <article class="way" data-i="2" data-name="Iced matcha" data-tag="Iced" data-price="$5.95">
+        <span class="wn">03 <i>/ 04</i></span>
+        <h3>An iced matcha</h3>
+        <p>Matcha latte <b>$5.95</b> over ice. Want it dirty? Add the espresso for <b>$6.95</b>.</p>
+        <span class="wtag">Iced</span>
+      </article>
+      <article class="way" data-i="3" data-name="Hot chocolate" data-tag="Hot" data-price="$3.50">
+        <span class="wn">04 <i>/ 04</i></span>
+        <h3>A hot chocolate</h3>
+        <p>The comforting one, <b>$3.50</b>. Top it with whipped cream or a caramel or chocolate drizzle.</p>
+        <span class="wtag">Hot</span>
+      </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="cloudband" aria-hidden="true"><i class="cl cl1"></i><i class="cl cl2"></i></div>
+
+<!-- ===================== FIND US ===================== -->
+<section class="sec" id="find-us">
+  <div class="wrap find-grid">
+    <div class="find-copy" data-par=".06">
+      <span class="eyebrow" data-reveal>Visit</span>
+      <h2 data-reveal style="--d:.05s">Come fly <span class="script">with us.</span></h2>
+      <p data-reveal style="--d:.1s">Find the yellow letters on the blue wall, just inside the lobby. Call ahead or come straight in.</p>
+      <p class="hours-link" data-reveal style="--d:.12s">Opening hours live on <a href="#departures">the departures board</a> near the top of the page. Today's flight is lit up there.</p>
+      <dl class="facts" data-reveal style="--d:.15s">
+        <div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Fly+Me+to+the+Brew%2C+9055+Northlake+Pkwy%2C+Orlando%2C+FL+32827" target="_blank" rel="noopener">9055 Northlake Pkwy<br>YMCA lobby, Orlando, FL 32827</a></dd></div>
+        <div><dt>Call</dt><dd><a href="#" data-phone="2021246587" data-phone-text data-phone-link>Loading…</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/flyme2thebrew/" target="_blank" rel="noopener">@flyme2thebrew</a></dd></div>
+        <div><dt>Service</dt><dd>Take out · Breakfast</dd></div>
+      </dl>
+    </div>
+    <div class="map" data-par="-.07" data-reveal style="--d:.1s" role="img" aria-label="Illustrated map: a flight path from your side of town to the Fly Me to the Brew stand inside the YMCA lobby on Northlake Parkway">
+      <svg viewBox="0 0 600 480" aria-hidden="true">
+        <path d="M0 0 C 90 30, 120 0, 200 20 S 300 0, 340 0Z" fill="#FFE08A"/>
+        <path d="M600 260 C 520 280, 500 360, 540 420 S 600 480, 600 480Z" fill="#FFE08A"/>
+        <ellipse cx="470" cy="430" rx="70" ry="26" fill="#BFD0FF" opacity=".8"/>
+        <ellipse cx="130" cy="120" rx="54" ry="22" fill="#BFD0FF" opacity=".8"/>
+        <!-- Northlake Pkwy, drawn as a simple road -->
+        <path d="M-10 330 C 120 300, 220 330, 330 280 S 520 190, 620 210" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round"/>
+        <path class="road" d="M-10 330 C 120 300, 220 330, 330 280 S 520 190, 620 210"/>
+        <text class="street" x="40" y="368">Northlake Pkwy</text>
+        <!-- the flight path -->
+        <path class="flight" id="route" d="M60 90 C 160 40, 260 120, 220 190 S 120 240, 200 250 S 330 190, 372 262"/>
+        <g class="pin"><circle class="pulse" cx="60" cy="90" r="12" fill="#1B3FB8"/><circle cx="60" cy="90" r="8" fill="#1B3FB8"/><text x="78" y="82">You</text><text class="sm" x="78" y="104">take off</text></g>
+        <g class="pin"><circle class="pulse" cx="372" cy="262" r="14" fill="#F4B400"/><circle cx="372" cy="262" r="10" fill="#F4B400" stroke="#191510" stroke-width="3"/><text x="396" y="250">The stand</text><text class="sm" x="396" y="272">inside the YMCA</text></g>
+        <g id="car">
+          <!-- little plane that keeps flying the loop -->
+          <g transform="rotate(0)"><path d="M-16 0 L16 -5 L20 0 L16 5Z" fill="#191510"/><path d="M-2 0 L-13 -14 L-8 -14 L7 -2Z" fill="#1B3FB8"/><path d="M-2 0 L-13 14 L-8 14 L7 2Z" fill="#1B3FB8"/><circle cx="12" cy="0" r="2" fill="#F4B400"/></g>
+          <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1"><mpath href="#route"/></animateMotion>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- floating call button: appears after the hero, hides over the footer -->
+<a class="order-float" id="order-float" href="#" data-phone="2021246587" data-phone-link aria-label="Call Fly Me to the Brew to order">
+  <span class="of-dot" aria-hidden="true"></span>
+  <span class="of-text"><b>Call to order</b><small id="of-status">Inside the YMCA lobby</small></span>
+  <span class="of-arr" aria-hidden="true">→</span>
+</a>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <!-- drip along the top edge -->
+  <svg class="drip" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0 0H1200V16C1150 16 1140 26 1100 22S1040 14 990 18 930 34 880 24 800 12 760 18 700 30 650 22 560 14 520 20 450 30 400 22 330 12 280 18 200 30 150 20 60 14 0 18Z"/>
+    <g fill="currentColor"><path class="d" d="M140 20 q0 30 10 34 q10 -4 10 -34Z"/><path class="d" d="M470 22 q0 22 8 26 q8 -4 8 -26Z" style="animation-delay:1.2s"/><path class="d" d="M760 18 q0 36 11 40 q11 -4 11 -40Z" style="animation-delay:.6s"/><path class="d" d="M1030 18 q0 24 8 28 q8 -4 8 -28Z" style="animation-delay:1.8s"/></g>
+  </svg>
+  <div class="wrap">
+    <div class="foot-top">
+      <p>Coffee, chai, matcha &amp; hot chocolate. <span class="script">See you in the lobby.</span></p>
+      <div class="btn-row">
+        <a class="btn" href="#" data-phone="2021246587" data-phone-link>Call to order <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="https://www.instagram.com/flyme2thebrew/" target="_blank" rel="noopener">@flyme2thebrew</a>
+      </div>
+    </div>
+    <div class="giant" data-par="-.1" aria-hidden="true">the brew</div>
+    <div class="foot-bot">
+      <span>Inside the YMCA lobby</span>
+      <span>9055 Northlake Pkwy, Orlando, FL 32827 · <a href="#" data-phone="2021246587" data-phone-text data-phone-link>Loading…</a></span>
+      <span>© <span id="yr">2026</span> Fly Me to the Brew · <a href="privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
